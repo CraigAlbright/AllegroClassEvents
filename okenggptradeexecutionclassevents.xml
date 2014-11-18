@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<VisualModelDS xmlns="http://allegrodevelopment.com/VisualModelDS.xsd">
+  <classevent>
+    <status>Enabled</status>
+    <name>okeTradeExecutionNOMFlagProcess</name>
+    <description>on update, will set value so that a trade will be eligible for NOM Export</description>
+    <class>TradeExecution</class>
+    <action>BeforeUpdateData</action>
+    <tier>UI</tier>
+    <seq>100</seq>
+    <code>//
+if(_view.Name != "Trade Execution - NGGP")
+    return new UiEventResult(EventStatus.Continue);
+
+var dtngposition = _view.DataSource.Tables["ngposition"];
+var dttrade = _view.DataSource.Tables["trade"];
+return new UiEventResult(EventStatus.Continue);</code>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-09-03T18:25:27.35-05:00</creationdate>
+    <revisionname>Craig Albright</revisionname>
+    <revisiondate>2014-09-03T18:58:19.987-05:00</revisiondate>
+    <RowNumber>0</RowNumber>
+  </classevent>
+</VisualModelDS>

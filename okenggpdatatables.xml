@@ -1,0 +1,124 @@
+<?xml version="1.0" standalone="yes"?>
+<DataModelDS xmlns="http://allegrodevelopment.com/DataModelDS.xsd">
+  <dbtable>
+    <dbtable>okenggpnomexport</dbtable>
+    <dbgroup>okeinterfaces</dbgroup>
+    <dbdefinition>Nom Export history table for Quorum interface</dbdefinition>
+    <label>Quorum NOM export</label>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-11T15:06:07.527</creationdate>
+    <datamethod>Transaction</datamethod>
+    <scopestatus>false</scopestatus>
+    <RowNumber>20</RowNumber>
+  </dbtable>
+  <dbtable>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbgroup>okeinterfaces</dbgroup>
+    <dbdefinition>Contact staging table for Quorum interface</dbdefinition>
+    <label>Quorum Contact Staging</label>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-11T15:05:16.12</creationdate>
+    <datamethod>Transaction</datamethod>
+    <scopestatus>false</scopestatus>
+    <RowNumber>17</RowNumber>
+  </dbtable>
+  <dbtable>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbgroup>okeinterfaces</dbgroup>
+    <dbdefinition>Contact staging table for Quorum interface</dbdefinition>
+    <label>Quorum Contact Staging</label>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-11T15:05:05.59</creationdate>
+    <datamethod>Transaction</datamethod>
+    <scopestatus>false</scopestatus>
+    <RowNumber>16</RowNumber>
+  </dbtable>
+  <dbtable>
+    <dbtable>okenggpdefaults</dbtable>
+    <dbgroup>okeinterfaces</dbgroup>
+    <dbdefinition>The look up table for Quorum interface</dbdefinition>
+    <label>OneOk NGGP Look up</label>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-11T14:56:24.437</creationdate>
+    <datamethod>Configuration</datamethod>
+    <scopestatus>false</scopestatus>
+    <RowNumber>14</RowNumber>
+  </dbtable>
+  <dbtable>
+    <dbtable>okenggpcounterparties</dbtable>
+    <dbgroup>okeinterfaces</dbgroup>
+    <dbdefinition>The counterparties lookup table for quorum interface</dbdefinition>
+    <label>Quorum Counterparty</label>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-11T15:01:01.017</creationdate>
+    <datamethod>Transaction</datamethod>
+    <scopestatus>false</scopestatus>
+    <RowNumber>12</RowNumber>
+  </dbtable>
+  <dbtable>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbgroup>okeinterfaces</dbgroup>
+    <dbdefinition>The contract/meter staging archive table for quorum interface</dbdefinition>
+    <label>Quorum Contract Meter  Archive</label>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-11T15:02:36.117</creationdate>
+    <datamethod>Transaction</datamethod>
+    <scopestatus>false</scopestatus>
+    <RowNumber>10</RowNumber>
+  </dbtable>
+  <dbtable>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbgroup>okeinterfaces</dbgroup>
+    <dbdefinition>The contract/meter staging table for quorum interface</dbdefinition>
+    <label>Quorum Contract Meter Staging</label>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-11T15:01:50.073</creationdate>
+    <datamethod>Transaction</datamethod>
+    <scopestatus>false</scopestatus>
+    <RowNumber>8</RowNumber>
+  </dbtable>
+  <dbtable>
+    <dbtable>okenggpcontractmeter_xref</dbtable>
+    <dbgroup>okeinterfaces</dbgroup>
+    <dbdefinition>The contract/meter cross reference table for quorum interface</dbdefinition>
+    <label>Quorum Contract Meter XREF</label>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-11T15:04:11.2</creationdate>
+    <datamethod>Transaction</datamethod>
+    <scopestatus>false</scopestatus>
+    <RowNumber>6</RowNumber>
+  </dbtable>
+  <dbtable>
+    <dbtable>okenggpcontractmeter</dbtable>
+    <dbgroup>okeinterfaces</dbgroup>
+    <dbdefinition>The contract/meter table for quorum interface</dbdefinition>
+    <label>Quorum Contract Meter</label>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-11T15:03:27.43</creationdate>
+    <datamethod>Transaction</datamethod>
+    <scopestatus>false</scopestatus>
+    <RowNumber>4</RowNumber>
+  </dbtable>
+  <dbtable>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbgroup>okeinterfaces</dbgroup>
+    <dbdefinition>Contract staging archive table for quorum interface</dbdefinition>
+    <label>Quorum Contract Staging Archive</label>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-11T14:59:31.92</creationdate>
+    <datamethod>Transaction</datamethod>
+    <scopestatus>false</scopestatus>
+    <RowNumber>2</RowNumber>
+  </dbtable>
+  <dbtable>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbgroup>okeinterfaces</dbgroup>
+    <dbdefinition>Contract staging table for quorum interface</dbdefinition>
+    <label>Quorum Contract Staging</label>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-11T14:58:52.357</creationdate>
+    <datamethod>Transaction</datamethod>
+    <scopestatus>false</scopestatus>
+    <RowNumber>0</RowNumber>
+  </dbtable>
+</DataModelDS>

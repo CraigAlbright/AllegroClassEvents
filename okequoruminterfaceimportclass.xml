@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes"?>
+<VisualModelDS xmlns="http://allegrodevelopment.com/VisualModelDS.xsd">
+  <class>
+    <class>okeQuorumInterface</class>
+    <assembly>SysAdmin</assembly>
+    <component>Systems Admin</component>
+    <description>Class container for Quorum interface class events</description>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T18:45:07.647</creationdate>
+    <classtype>Transaction</classtype>
+    <RowNumber>0</RowNumber>
+  </class>
+</VisualModelDS>

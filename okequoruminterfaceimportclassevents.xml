@@ -1,0 +1,686 @@
+<?xml version="1.0" standalone="yes"?>
+<VisualModelDS xmlns="http://allegrodevelopment.com/VisualModelDS.xsd">
+  <classevent>
+    <status>Enabled</status>
+    <name>ArchiveData</name>
+    <description>Used to archive a staging table after import process runs</description>
+    <class>okeQuorumInterface</class>
+    <action>ClassMethod/ArchiveData</action>
+    <tier>Server</tier>
+    <seq>1</seq>
+    <code>//get data from tables where message = null
+var dtokenggpcontractstaging = new DataTable("okenggpcontract_staging");
+var dtokenggpcontractmeterstaging = new DataTable("okenggpcontractmeter_staging");
+var dtokenggpcontactstaging = new DataTable("okenggpcontact_staging");
+var dtokenggpcontractstagingarc = new DataTable("okenggpcontract_staging_arc");
+var dtokenggpcontractmeterstagingarc = new DataTable("okenggpcontractmeter_staging_arc");
+var dtokenggpcontactstagingarc = new DataTable("okenggpcontact_staging_arc");
+const string dtcsSql = "select * from okenggocontract_staging where message is null";
+const string dtcmsSql = "select * from okenggpcontractmeter_staging where message is null";
+const string dtctSql = "select * from okenggpcontact_staging where message is null";
+const string dtcsaSql = "select * from okenggpcontract_staging_arc";
+const string dtcmsaSql = "select * from okenggpcontractmeter_staging_arc";
+const string dtctaSql = "select * from okenggpcontact_staging_arc";
+DbHelper.FillDataTable(dtokenggpcontractstaging, dtcsSql);
+DbHelper.FillDataTable(dtokenggpcontractmeterstaging, dtcmsSql);
+DbHelper.FillDataTable(dtokenggpcontactstaging, dtctSql);
+DbHelper.FillDataTable(dtokenggpcontractstagingarc, dtcsaSql);
+DbHelper.FillDataTable(dtokenggpcontractmeterstagingarc, dtcmsaSql);
+DbHelper.FillDataTable(dtokenggpcontactstagingarc, dtctaSql);
+dtokenggpcontractstagingarc.Merge(dtokenggpcontractstaging,true, MissingSchemaAction.Ignore);
+dtokenggpcontractmeterstagingarc.Merge(dtokenggpcontractmeterstaging, true, MissingSchemaAction.Ignore);
+dtokenggpcontactstagingarc.Merge(dtokenggpcontactstaging, true, MissingSchemaAction.Ignore);
+var archiveDataSet = new DataSet();
+archiveDataSet.Tables.Add(dtokenggpcontractstagingarc);
+archiveDataSet.Tables.Add(dtokenggpcontractmeterstagingarc);
+archiveDataSet.Tables.Add(dtokenggpcontactstagingarc);
+UpdateData(archiveDataSet);</code>
+    <parameter>return=void, args="DataTable table"</parameter>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-18T13:24:16.527-05:00</creationdate>
+    <revisionname>Craig Albright</revisionname>
+    <revisiondate>2014-08-21T00:50:11.52-05:00</revisiondate>
+  </classevent>
+  <classevent>
+    <status>Enabled</status>
+    <name>okeExportNOMData</name>
+    <description>Process that exports NOM data for import into Quorum</description>
+    <class>okeQuorumInterface</class>
+    <action>ClassMethod/ExportNomData</action>
+    <tier>Server</tier>
+    <seq>1</seq>
+    <code>//lets verify the path exists and/or is reachable
+if (!Directory.Exists(exportPath))
+{
+    GridQueueManager.Log("Export path does not exist","Directory does not exist or is inaccessable", exportPath);
+    return;
+}
+GemBoxXLS.SpreadsheetInfo.SetLicense(FileExport.GemBoxLicenseKey);
+//ok we have an existing directory. Lets create our file
+var nomExportFile = new GemBoxXLS.ExcelFile();
+var nomExportWorksheet = nomExportFile.Worksheets.Add("NOM");
+//Get some data in here
+var dtngposition = new DataTable("ngposition");
+const string ngpositionSql = "select * from ngposition";
+DbHelper.FillDataTable(dtngposition, ngpositionSql);
+var dtokenggpounterparties = new DataTable("okenggpcounterparties");
+const string okenggpcounterpartiesSql = "select * from okenggpcounterparties";
+DbHelper.FillDataTable(dtokenggpounterparties, okenggpcounterpartiesSql);
+var dttradeNomTable = new DataTable("okenggpnomexport");
+const string okenggpnomexportSql =
+"select 'FriendlyName' as 'Friendly Name', t.company as 'Company', " +
+"cp.counterparty  as 'Service Requestor No'," +
+" t.begdate as 'Begin Gas Day', " +
+"t.enddate as 'End Gas Day'," +
+"case when p.positiontype = 'SELL' then 0 else 1 end as 'Receipt?'," +
+"case when p.positiontype = 'BUY' then 0 else 1 end as 'Delivery?'," +
+"'PNT' as 'Nom Model', cp.contract as 'Rec SR K'," +
+"case when p.positiontype = 'SELL' then ngpos.okerecmeter else case when p.positiontype = 'BUY' then ngpos.okedelmeter end end as 'Rec Meter', " +
+"case when p.positiontype = 'SELL' then ngpos.okedelmeter else case when p.positiontype = 'BUY' then ngpos.okerecmeter end end as 'Del Meter', " +
+"'' as 'Up ID', '' as 'Dn ID', '' as 'Up Name', '' as 'Dn Name', " +
+"case when p.positiontype = 'SELL' then ngq.okevolume else case when p.positiontype = 'BUY' then ngq.volume end end as 'Rec Nom Qty', " +
+"case when p.positiontype = 'SELL' then ngq.volume else case when p.positiontype = 'BUY' then ngq.okevolume end end as 'Del Nom Qty', " +
+"case when p.positiontype = 'SELL' then cp.contract else null end as 'Rec Pkg ID', " +
+"case when p.positiontype = 'BUY' then cp.contract else null end as 'Del Pkg ID', " +
+"'10' as 'Rec Rank', '10' as 'Del Rank', '01' as 'TT', 'Allegro' as 'Source' " +
+"from trade t " +
+"join position p on p.trade = t.trade " +
+"left join finposition fp on fp.position = p.position " +
+"join ngposition ngpos on p.position = ngpos.position " +
+"join ngquantity ngq on ngq.position = p.position " +
+"join contractparty cp on p.contract = cp.contract " +
+"where p.product = 'NG' and ngq.quantitystatus = 'TRADE' and t.tradetype = 'Physical Gas' and ngpos.okenomflag is null or ngpos.okenomflag not in ('SENT')";
+DbHelper.FillDataTable(dttradeNomTable, okenggpnomexportSql);
+foreach (DataRow dataRow in dttradeNomTable.Rows)
+{
+    //Update our place holders with info we need
+    dataRow["Friendly Name"] = "Allegro Nggp NOMs";
+    var companyName = dataRow["Company"].ToString();
+    if (!string.IsNullOrEmpty(companyName))
+    {
+        var companyNameRows = dtokenggpounterparties.Select("allegro = " + Expr.Value(companyName));
+        if (!companyNameRows.Any())
+        {
+            //this should never happen, as they shouldnt have any values that cant be in allegro in their trade entry...
+        }
+        else
+        {
+            dataRow["Company"] = companyNameRows[0]["legacy"].ToString();
+        }
+    }
+    var counterpartyName = dataRow["Service Requestor No"].ToString();
+    var counterpartyNameRows = dtokenggpounterparties.Select("allegro = " + Expr.Value(counterpartyName));
+    if (!counterpartyNameRows.Any())
+    {
+        //this should never happen, as they shouldnt have any values that cant be in allegro in their trade entry...
+    }
+    else
+    {
+        dataRow["Service Requestor No"] = counterpartyNameRows[0]["legacy"].ToString();
+    }
+    //Todo: Update okenomstatus to sent
+    
+}
+nomExportWorksheet.InsertDataTable(dttradeNomTable, 0, 0, true);
+nomExportFile.SaveXlsx(Path.Combine(exportPath,"nomexport-"+ DateTime.Now.ToFileTime().ToString(CultureInfo.InvariantCulture) + ".xlsx"));</code>
+    <parameter>return=void,args="string exportPath"</parameter>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T21:02:53.333-05:00</creationdate>
+    <revisionname>Craig Albright</revisionname>
+    <revisiondate>2014-09-03T18:55:12.75-05:00</revisiondate>
+  </classevent>
+  <classevent>
+    <status>Enabled</status>
+    <name>okeImportContact</name>
+    <description>Process that imports contacts from the Quorum Export</description>
+    <class>okeQuorumInterface</class>
+    <action>ClassMethod/ImportContact</action>
+    <tier>Server</tier>
+    <seq>1</seq>
+    <code>//create the tables
+var dtNggpContactStaging = new DataTable("okenggpcontactstaging");
+var dtNggpDefaults = new DataTable("okenggpdefaults");
+var dtAddress = new DataTable("address");
+var dtContact = new DataTable("contact");
+var dsContact = new DataSet();
+var dsImport = new DataSet();
+dsContact.Tables.Add(dtContact);
+dsContact.Tables.Add(dtAddress);
+dsImport.Tables.Add(dtNggpContactStaging);
+dsImport.Tables.Add(dtNggpDefaults);
+//load the tables
+const string nggpcontractstagingsql = "select * from okenggpcontractstaging";
+const string nggpdefaultsql = "select * from okenggpdefaults";
+const string addresssql = "select * from address";
+const string contactsql = "select * from contact";
+DbHelper.FillDataTable(dtNggpContactStaging, nggpcontractstagingsql);
+DbHelper.FillDataTable(dtNggpDefaults, nggpdefaultsql);
+DbHelper.FillDataTable(dtAddress, addresssql);
+DbHelper.FillDataTable(dtContact, contactsql);
+//do work
+foreach (DataRow drCs in dtNggpContactStaging.Rows)
+{
+    //assign vars from contact staging row
+    var bacode = drCs["ba"].ToString();
+    var basuffix = drCs["basuffix"].ToString();
+    var title = drCs["title"].ToString();
+    var firstname = drCs["first_name"].ToString();
+    var lastname = drCs["last_name"].ToString();
+    var officephone = drCs["officephone"].ToString();
+    var homephone = drCs["homephone"].ToString();
+    var fax = drCs["faxphone"].ToString();
+    var cell = drCs["mobilephone"].ToString();
+    var email = drCs["email"].ToString();
+    var notifypreference = drCs["notifytype"].ToString();
+    
+    //need to get the counterparty from the nggpdefault mapping table
+    //first select the row
+    var mappedCounterpartyRows =
+    dtNggpDefaults.Select("lookup = " + Expr.Value(bacode) + " and type = " + Expr.Value("company"));
+    if (!mappedCounterpartyRows.Any())
+    {
+        drCs["message"] += "okenggpdefaults does not contain a lookup value for the ba";
+    }
+    else
+    {
+        //Get the counterparty name from the BA number sent from Quorum
+        var counterparty = mappedCounterpartyRows[0]["allegro"].ToString();
+        //now update/insert into contact and address
+        var addressRows =
+        dtAddress.Select("counterparty = " + Expr.Value(counterparty) + " okebasuffix = " +
+        Expr.Value(basuffix));
+        if (!addressRows.Any())
+        {
+            drCs["message"] += "address does not exist for counterparty and okebasuffix";
+            continue;
+        }
+        var addresscode = addressRows[0]["addresscode"].ToString();
+        var contactRows =
+        dtContact.Select("counterparty = " + Expr.Value(counterparty) + " and name = " +
+        Expr.Value(string.Concat(firstname, " ", lastname)));
+        if (!contactRows.Any())
+        {
+            //insert
+            var newContactRow = dtContact.NewRow();
+            newContactRow["counterparty"] = counterparty;
+            newContactRow["name"] = string.Concat(firstname, " ", lastname);
+            newContactRow["okebasuffix"] = basuffix;
+            newContactRow["title"] = title;
+            newContactRow["address"] = addresscode;
+            newContactRow["officephone"] = officephone;
+            newContactRow["faxphone"] = fax;
+            newContactRow["homephone"] = homephone;
+            newContactRow["mobilephone"] = cell;
+            newContactRow["email"] = email;
+            newContactRow["status"] = "ACTIVE";
+            newContactRow["okenotifytype"] = notifypreference;
+            newContactRow["creationname"] = Environment.UserName;
+            newContactRow["creationdate"] = DateTime.Now;
+            dtContact.Rows.Add(newContactRow);
+        }
+        else
+        {
+            var cr = contactRows[0];
+            //update
+            cr["counterparty"] = counterparty;
+            cr["name"] = string.Concat(firstname, " ", lastname);
+            cr["okebasuffix"] = basuffix;
+            cr["title"] = title;
+            cr["address"] = addresscode;
+            cr["officephone"] = officephone;
+            cr["faxphone"] = fax;
+            cr["homephone"] = homephone;
+            cr["mobilephone"] = cell;
+            cr["email"] = email;
+            cr["okenotifytype"] = notifypreference;
+            cr["revisionname"] = Environment.UserName;
+            cr["revisiondate"] = DateTime.Now;
+            
+        }
+    }
+}
+//Inactivate the contacts that are not sent. if they are missing, they get inactivated.
+
+var allegroContacts = dtContact.AsEnumerable().Select(c =&gt; c["name"] + "|" + c["counterparty"] + "|" + c["okebasuffix"]).ToList();
+var importContacts = dtNggpContactStaging.AsEnumerable().Select(i =&gt; i["first_name"].ToString() + " " + i["last_name"].ToString() + "|" + i["baname"] + "|" + i["okebasuffix"]).ToList();
+var missingContacts = allegroContacts.Except(importContacts).ToArray();
+if (missingContacts.Any())
+{
+    foreach (var inactRows in missingContacts.Select(missingContact =&gt; dtContact.Select("point = " + Expr.Value(missingContact))).Where(inactRows =&gt; inactRows.Any()))
+    {
+        inactRows[0]["status"] = "INACTIVE";
+    }
+}
+UpdateData(dsContact);
+UpdateData(dsImport);</code>
+    <parameter>return=void</parameter>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T20:52:32.217-05:00</creationdate>
+    <revisionname>Craig Albright</revisionname>
+    <revisiondate>2014-09-02T13:20:46.493-05:00</revisiondate>
+  </classevent>
+  <classevent>
+    <status>Enabled</status>
+    <name>okeImportContractCounterpartyPipelinePoint</name>
+    <description>Process that imports contracts, pipelines, points, and counterparty info from the Quorum Export</description>
+    <class>okeQuorumInterface</class>
+    <action>ClassMethod/ImportContractCounterPartyPipelinePoint</action>
+    <tier>Server</tier>
+    <seq>1</seq>
+    <code>#region LoadTables
+//Load Mapping Table
+var dtNggpDefaults = new DataTable("okenggpdefaults");
+const string nggpDefautSql = "select type, lookup, allegro from okenggpdefaults";
+DbHelper.FillDataTable(dtNggpDefaults, nggpDefautSql);
+//Load the contract import table
+var dtNggpContractStaging = new DataTable("okenggpcontractstaging");
+const string nggpContractSql = "select * from okenggpcontract_staging";
+DbHelper.FillDataTable(dtNggpContractStaging, nggpContractSql);
+//Load the contract meter import table
+var dtNggpContractMeterStaging = new DataTable("okenggpcontractmeterstaging");
+const string nggpContractMeterSql = "select * from okenggpcontractmeterstaging";
+DbHelper.FillDataTable(dtNggpContractMeterStaging, nggpContractMeterSql);
+//Load the contract meter cross reference table
+var dtNggpContractMeterXref = new DataTable("okenggpcontractmeterxref");
+const string nggpContractMeterXrefSql = "select * from okenggpcontractmeterxfef";
+DbHelper.FillDataTable(dtNggpContractMeterXref, nggpContractMeterXrefSql);
+//Load the address table
+var dtaddress = new DataTable("address");
+const string addressSql = "select * from contract";
+DbHelper.FillDataTable(dtaddress, addressSql);
+//Load the contract table
+var dtcontract = new DataTable("contract");
+const string contractSql = "select * from contract";
+DbHelper.FillDataTable(dtcontract, contractSql);
+//Load the contractmeter table
+var dtcontractparty = new DataTable("contractparty");
+const string contractPartySql = "select * from contractparty";
+DbHelper.FillDataTable(dtcontractparty, contractPartySql);
+//load the pipline table
+var dtpipeline = new DataTable("pipeline");
+const string pipelineSql = "select * from pipeline";
+DbHelper.FillDataTable(dtpipeline, pipelineSql);
+//load the point table
+var dtngpoint = new DataTable("ngpoint");
+const string ngpointSql = "select * from ngpoint";
+DbHelper.FillDataTable(dtngpoint, ngpointSql);
+
+//Put all the tables in a dataset
+var importDataSet = new DataSet();
+importDataSet.Tables.Add(dtaddress);
+importDataSet.Tables.Add(dtcontract);
+importDataSet.Tables.Add(dtcontractparty);
+importDataSet.Tables.Add(dtpipeline);
+importDataSet.Tables.Add(dtngpoint);
+var stagingDataSet = new DataSet();
+stagingDataSet.Tables.Add(dtNggpContractStaging);
+stagingDataSet.Tables.Add(dtNggpContractMeterStaging);
+stagingDataSet.Tables.Add(dtNggpContractMeterXref);
+#endregion
+
+
+//loop through the import table and make our updates
+foreach (DataRow contractStagingDataRow in dtNggpContractStaging.Rows)
+{
+    #region RowVariables
+    //Get the Row Variables
+    var contract = "Q" + contractStagingDataRow["contract"];
+    var company = contractStagingDataRow["company"].ToString();
+    var companyname = contractStagingDataRow["company_name"].ToString();
+    var ba = contractStagingDataRow["ba"].ToString();
+    var baname = contractStagingDataRow["ba_name"].ToString();
+    var pipeline = contractStagingDataRow["pipeline"].ToString();
+    var pipelinename = contractStagingDataRow["pipeline_name"].ToString();
+    var addressseq = contractStagingDataRow["addressseq"].ToString();
+    var addr1 = contractStagingDataRow["addr1"].ToString();
+    var addr2 = contractStagingDataRow["addr2"].ToString();
+    var addr3 = contractStagingDataRow["addr3"].ToString();
+    var city = contractStagingDataRow["city"].ToString();
+    var state = contractStagingDataRow["state"].ToString();
+    var zip = contractStagingDataRow["zip"].ToString();
+    var contractdate = DateTime.Parse(contractStagingDataRow["contractdate"].ToString());
+    var effectivedate = DateTime.Parse(contractStagingDataRow["effectivedate"].ToString());
+    var terminationdate = DateTime.Parse(contractStagingDataRow["terminationdate"].ToString());
+    #endregion
+    //Find the contract in Allegros contract table
+    var contractRow = dtcontract.Select("contract = " + Expr.Value(contract));
+    //If it doesnt exist, we need to add it
+    //if it exists, see if anything has changed
+    if (!contractRow.Any())
+    {
+        contractStagingDataRow["message"] += "contract.contract did not exist. ";
+    }
+    else
+    {
+        var ctRow = contractRow[0];
+        //first compare dates and make sure that we do not need to update any values
+        var ctctrctdate = DateTime.Parse(ctRow["contractdate"].ToString());
+        var cteffdate = DateTime.Parse(ctRow["effectivedate"].ToString());
+        var cttermdate = DateTime.Parse(ctRow["terminationdate"].ToString());
+        if (ctctrctdate != contractdate)
+        {
+            ctRow["contractdate"] = contractdate.ToShortDateString();
+        }
+        if (cteffdate != effectivedate)
+        {
+            ctRow["effectivedate"] = effectivedate.ToShortDateString();
+        }
+        if (cttermdate != terminationdate)
+        {
+            ctRow["terminationdate"] = terminationdate.ToShortDateString();
+        }
+        //if today is greater than the latest available termdate we inactivate the contract
+        if (DateTime.Today &gt; cttermdate)
+        {
+            ctRow["status"] = "INACTIVE";
+        }
+    }
+    //contractmeter comparisons next
+    var contractpartyrows = dtcontractparty.Select("contract = " + Expr.Value(contract));
+    if (!contractpartyrows.Any())
+    {
+        //ctPartyRow1
+        var ctPartyRow1 = dtcontractparty.NewRow();
+        ctPartyRow1["counterparty"] = companyname;
+        ctPartyRow1["contract"] = contract;
+        ctPartyRow1["surrogate"] = DbSysGen.GetUniqueID("contractparty", "surrogate", string.Empty,
+        string.Empty, 1);
+        ctPartyRow1["begtime"] = effectivedate;
+        ctPartyRow1["endtime"] = terminationdate;
+        ctPartyRow1["partytype"] = "BUYER/SELLER";
+        ctPartyRow1["contractprep"] = 1;
+        ctPartyRow1["okebasuffix"] = addressseq;
+        ctPartyRow1["exhibitprep"] = 1;
+        ctPartyRow1["notification"] = "EMAIL";
+        ctPartyRow1["creationname"] = Environment.UserName;
+        ctPartyRow1["creationdate"] = DateTime.Now;
+        //ctPartyRow2
+        var ctPartyRow2 = dtcontractparty.NewRow();
+        ctPartyRow2["counterparty"] = baname;
+        ctPartyRow2["contract"] = contract;
+        ctPartyRow2["surrogate"] = DbSysGen.GetUniqueID("contractparty", "surrogate", string.Empty,
+        string.Empty, 1);
+        contractStagingDataRow["message"] += "contractparty.contract does not exist";
+        ctPartyRow2["begtime"] = effectivedate;
+        ctPartyRow2["endtime"] = terminationdate;
+        ctPartyRow2["partytype"] = "BUYER/SELLER";
+        ctPartyRow2["contractprep"] = 1;
+        ctPartyRow2["okebasuffix"] = addressseq;
+        ctPartyRow2["exhibitprep"] = 1;
+        ctPartyRow2["notification"] = "EMAIL";
+        ctPartyRow2["creationname"] = Environment.UserName;
+        ctPartyRow2["creationdate"] = DateTime.Now;
+        dtcontractparty.Rows.Add(ctPartyRow1, ctPartyRow2);
+    }
+    else
+    {
+        if (contractpartyrows.Count() == 2)
+        {
+            var colContractParty = contractpartyrows[0]["counterparty"].ToString();
+            var colCounterParty = contractpartyrows[1]["counterparty"].ToString();
+            if (colContractParty != companyname || colCounterParty != baname)
+            {
+                contractpartyrows[0]["counterparty"] = companyname;
+                contractpartyrows[1]["counterparty"] = baname;
+            }
+            if (contractpartyrows[1]["okebasuffix"].ToString() != addressseq)
+            {
+                //see if the address sequence exists in address
+                var addressRows = dtaddress.Select("counterparty = " + Expr.Value(baname) + " and okebasuffix = " + Expr.Value(addressseq));
+                if (!addressRows.Any())
+                {
+                    //add
+                    var newAddressRow = dtaddress.NewRow();
+                    newAddressRow["counterparty"] = baname;
+                    //newAddressRow["addresscode"]
+                    newAddressRow["okebasuffix"] = addressseq;
+                    newAddressRow["address"] = string.Concat(addr1, Environment.NewLine, addr2, Environment.NewLine, addr3);
+                    newAddressRow["city"] = city;
+                    newAddressRow["stateprovence"] = state;
+                    newAddressRow["zip"] = zip;
+                    dtaddress.Rows.Add(newAddressRow);
+                }
+                else
+                {
+                    //for brevity's sake rename that row...
+                    var ar = addressRows[0];
+                    ar["counterparty"] = baname;
+                    ar["okebasuffix"] = addressseq;
+                    ar["address"] = string.Concat(addr1, Environment.NewLine, addr2, Environment.NewLine, addr3);
+                    ar["city"] = city;
+                    ar["stateprovence"] = state;
+                    ar["zip"] = zip;
+                }
+            }
+            
+        }
+        else
+        {
+            contractStagingDataRow["message"] += "There is " + Expr.Value(contractpartyrows.Count()) +
+            " rows for this contract, expected 2. ";
+        }
+        
+    }
+    //Pipeline and point are up next
+    //first find the pipelines
+    var dtpipelineRows = dtpipeline.Select("pipeline = " + Expr.Value(pipeline));
+    if (!dtpipelineRows.Any())
+    {
+        contractStagingDataRow["message"] += "pipeline.pipeline does not exist";
+    }
+    else
+    {
+        var pipelineRow = dtpipelineRows[0];
+        if (pipelineRow["description"].ToString() != pipelinename)
+        {
+            pipelineRow["description"] = pipelinename;
+            pipelineRow["operator"] = pipelinename;
+        }
+    }
+    
+    //Point time. Select the points based on their associated pipeline. We should get multiple points so we need to figure out
+    //if anything has changed on each point. Loop through and compare...
+    var dtngpointRows = dtngpoint.Select("pipeline = " + Expr.Value(pipeline));
+    if (!dtngpointRows.Any())
+    {
+        contractStagingDataRow["message"] += "No points exist for ngpoint.pipeline";
+    }
+    
+    
+}
+//now we want to make sure that contract meter has the points we expect
+//assign vars
+
+foreach (DataRow dtcontractMeterRow in dtNggpContractMeterStaging.Rows)
+{
+    //assign vars
+    var colcontract = dtcontractMeterRow["contract"].ToString();
+    var colpipeline = dtcontractMeterRow["pipeline"].ToString();
+    var colpoint = dtcontractMeterRow["meter"].ToString();
+    var colOperator = dtcontractMeterRow["operator"].ToString();
+    var colpipelinename = dtcontractMeterRow["pipeline_name"].ToString();
+    var colmetername = dtcontractMeterRow["meter_name"].ToString();
+    var colstateprovince = dtcontractMeterRow["stateprovince"].ToString();
+    var colcounty = dtcontractMeterRow["county"].ToString();
+    var colcountycode = dtcontractMeterRow["countycode"].ToString();
+    var coltownship = dtcontractMeterRow["township"].ToString();
+    var colsection = dtcontractMeterRow["section"].ToString();
+    var colrange = dtcontractMeterRow["range"].ToString();
+    
+    //we need to update ngpoint and okenggpcontractmeterxref
+    //first ngpoint
+    var ngpointrows =
+    dtngpoint.Select("pipeline = " + Expr.Value(colpipeline) + " and point = " +
+    Expr.Value(colpoint));
+    if (!ngpointrows.Any())
+    {
+        dtcontractMeterRow["message"] += "ngpoint.point does not exist on pipeline. ";
+    }
+    else
+    {
+        ngpointrows[0]["operator"] = colOperator;
+        ngpointrows[0]["pipeline_name"] = colpipelinename;
+        ngpointrows[0]["description"] = colmetername;
+        ngpointrows[0]["stateprovince"] = colstateprovince;
+        ngpointrows[0]["county"] = colcounty;
+        ngpointrows[0]["countycode"] = colcountycode;
+        ngpointrows[0]["township"] = coltownship;
+        ngpointrows[0]["section"] = colsection;
+        ngpointrows[0]["range"] = colrange;
+    }
+    //Contract meter xref
+    var contractMeterXrefRows =
+    dtNggpContractMeterXref.Select("contract = " + Expr.Value(colcontract) + " and pipeline = " +
+    Expr.Value(colpipeline) + " and meter = " + Expr.Value(colpoint));
+    if (!contractMeterXrefRows.Any())
+    {
+        var allegropipelinerows = dtpipeline.Select("point = " + Expr.Value(colpipeline));
+        if (!allegropipelinerows.Any())
+        {
+            //this would be weird if we hit this part of the code but just in case
+            dtcontractMeterRow["message"] += "allegro pipeline doesnt exist";
+        }
+        else
+        {
+            //Add a new row
+            var allegroPipeline = allegropipelinerows[0]["pipeline"].ToString();
+            
+            var newxrefrow = dtNggpContractMeterXref.NewRow();
+            newxrefrow["contract"] = colcontract;
+            newxrefrow["pipeline"] = colpipeline;
+            newxrefrow["allegropipeline"] = allegroPipeline;
+            newxrefrow["meter"] = colpoint;
+            newxrefrow["creationname"] = Environment.UserName;
+            newxrefrow["creationdate"] = DateTime.Now;
+            dtNggpContractMeterXref.Rows.Add(newxrefrow);
+        }
+        
+    }
+    else
+    {
+        var allegropipelinerows = dtpipeline.Select("point = " + Expr.Value(colpipeline));
+        if (!allegropipelinerows.Any())
+        {
+            //this would be weird if we hit this part of the code but just in case
+            dtcontractMeterRow["message"] += "allegro pipline doesnt exist. ";
+        }
+        else
+        {
+            var allegroPipeline = allegropipelinerows[0]["pipeline"].ToString();
+            contractMeterXrefRows[0]["contract"] = colcontract;
+            contractMeterXrefRows[0]["pipeline"] = colpipeline;
+            contractMeterXrefRows[0]["allegropipeline"] = allegroPipeline;
+            contractMeterXrefRows[0]["meter"] = colpoint;
+        }
+    }
+    
+}
+
+//now we need to make sure that every contract we received is in allegro. For
+//any missing contracts we inactivate them
+var allegroContracts = dtcontract.AsEnumerable().Select(c =&gt; c["contract"]).ToList();
+var importContracts = dtNggpContractStaging.AsEnumerable().Select(i =&gt; i["contract"]).ToList();
+var missingContracts = allegroContracts.Except(importContracts).ToArray();
+if (missingContracts.Any())
+{
+    foreach (var inactRows in missingContracts.Select(missingContract =&gt; dtcontract.Select("contract = " + Expr.Value(missingContract))).Where(inactRows =&gt; inactRows.Any()))
+    {
+        inactRows[0]["status"] = "INACTIVE";
+        inactRows[0]["inactivedate"] = DateTime.Today;
+    }
+}
+//now do the same thing to the points. if they are missing, they get inactivated.
+var allegroPoints = dtngpoint.AsEnumerable().Select(p =&gt; p["point"]).ToList();
+var importPoints = dtNggpContractMeterStaging.AsEnumerable().Select(i =&gt; i["meter"]).ToList();
+var missingPoints = allegroPoints.Except(importPoints).ToArray();
+if (missingPoints.Any())
+{
+    foreach (var inactRows in missingPoints.Select(missingPoint =&gt; dtngpoint.Select("point = " + Expr.Value(missingPoint))).Where(inactRows =&gt; inactRows.Any()))
+    {
+        inactRows[0]["status"] = "INACTIVE";
+        inactRows[0]["inactivedate"] = DateTime.Today;
+    }
+}
+UpdateData(importDataSet);
+UpdateData(stagingDataSet);</code>
+    <parameter>return=void,using="System.Linq,GemBoxXLS=GemBox.Spreadsheet,System.IO, System.Globalization"</parameter>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T20:47:38.627-05:00</creationdate>
+    <revisionname>Craig Albright</revisionname>
+    <revisiondate>2014-09-03T17:31:15.607-05:00</revisiondate>
+  </classevent>
+  <classevent>
+    <status>Enabled</status>
+    <name>ProcessQuorumImport</name>
+    <description>Main WorkerBase entry point for the Quorum interface</description>
+    <class>okeQuorumInterface</class>
+    <action>WorkerBase/RunSchedItem</action>
+    <tier>Server</tier>
+    <seq>1</seq>
+    <code>//This is the entry point for every step in the import/export process. The methods are called based
+//on the parameters passed which specify the import step we are processing.
+string processStep;
+if (parameters.TryGetValue("step", out processStep))
+{
+    switch (processStep)
+    {
+        case "ImportContractsAndPipes":
+        {
+            ImportContractCounterPartyPipelinePoint();
+            break;
+        }
+        case "ImportContacts":
+        {
+            ImportContact();
+            break;
+        }
+        case "ExportNomData":
+        {
+            string filePath;
+            if (parameters.TryGetValue("exportPath", out filePath))
+            {
+                ExportNomData(filePath);
+                break;
+            }
+            GridQueueManager.Log("ExportPath parameter not set", "Export Nom Data", "No exportPath parameter specified");
+            break;
+        }
+        default:
+        {
+            GridQueueManager.Log("Process parameter was invalid or not passed", "Run Scheduled Item", "okeQuorumInterface");
+            break;
+        }
+    }
+}</code>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T19:45:09.777-05:00</creationdate>
+    <revisionname>Craig Albright</revisionname>
+    <revisiondate>2014-08-13T21:30:18.667-05:00</revisiondate>
+  </classevent>
+  <classevent>
+    <status>Enabled</status>
+    <name>UpdateDataTable</name>
+    <description>will use a dbadapter to update a datatable</description>
+    <class>okeQuorumInterface</class>
+    <action>ClassMethod/UpdateData</action>
+    <tier>Server</tier>
+    <seq>1</seq>
+    <code>try
+{
+    using (var adapter = new DbAdapter())
+    {
+        adapter.Update(dset);
+    }
+}
+catch (Exception ex)
+{
+    GridQueueManager.Log(ex,"Error during UpdateData","UpdateData", ex.Message);
+    throw;
+}</code>
+    <parameter>return=void, args="DataSet dset"</parameter>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-15T14:54:58.517-05:00</creationdate>
+    <revisionname>Craig Albright</revisionname>
+    <revisiondate>2014-08-18T13:22:20.133-05:00</revisiondate>
+  </classevent>
+</VisualModelDS>

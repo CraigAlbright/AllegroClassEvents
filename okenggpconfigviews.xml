@@ -1,0 +1,237 @@
+<?xml version="1.0" standalone="yes"?>
+<VisualModelDS xmlns="http://allegrodevelopment.com/VisualModelDS.xsd">
+  <viewname>
+    <viewname>OKE QuorumInterface</viewname>
+    <description>Quorum import process configuration and parameter data</description>
+    <viewgroup>OKEConfiguration</viewgroup>
+    <class>okeQuorumInterface</class>
+    <viewset>OKEConfiguration</viewset>
+    <sortseq>6</sortseq>
+    <autoselect>true</autoselect>
+    <status>ACTIVE</status>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T21:54:11.617</creationdate>
+    <livedata>true</livedata>
+    <criteriawarning>false</criteriawarning>
+    <RowNumber>8</RowNumber>
+  </viewname>
+  <viewpane>
+    <viewname>OKE QuorumInterface</viewname>
+    <viewpane>okeNggpDefaults</viewpane>
+    <priority>1</priority>
+    <sortseq>1</sortseq>
+    <panetype>GRID</panetype>
+    <datatable>okenggpdefaults</datatable>
+    <viewpanetitle>Defaults</viewpanetitle>
+    <viewpanefont>Arial</viewpanefont>
+    <viewpanefontsize>8</viewpanefontsize>
+    <viewpanefontbold>false</viewpanefontbold>
+    <visible>true</visible>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T22:11:31.827</creationdate>
+    <revisionname>Craig Albright</revisionname>
+    <revisiondate>2014-08-13T22:14:43.5</revisiondate>
+    <autoheight>false</autoheight>
+    <autosizecolumn>false</autosizecolumn>
+    <securitycriteria>false</securitycriteria>
+    <RowNumber>0</RowNumber>
+  </viewpane>
+  <viewpane>
+    <viewname>OKE QuorumInterface</viewname>
+    <viewpane>okeNggpCounterparties</viewpane>
+    <priority>1</priority>
+    <sortseq>1</sortseq>
+    <panetype>GRID</panetype>
+    <datatable>okenggpcounterparties</datatable>
+    <viewpanetitle>Counterparties</viewpanetitle>
+    <viewpanefont>Arial</viewpanefont>
+    <viewpanefontsize>8</viewpanefontsize>
+    <viewpanefontbold>false</viewpanefontbold>
+    <visible>true</visible>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T22:13:08.767</creationdate>
+    <revisionname>Craig Albright</revisionname>
+    <revisiondate>2014-08-13T22:14:43.5</revisiondate>
+    <autoheight>false</autoheight>
+    <autosizecolumn>false</autosizecolumn>
+    <securitycriteria>false</securitycriteria>
+    <RowNumber>2</RowNumber>
+  </viewpane>
+  <viewpane>
+    <viewname>OKE QuorumInterface</viewname>
+    <viewpane>okeNggpContractStaging</viewpane>
+    <priority>1</priority>
+    <sortseq>1</sortseq>
+    <panetype>GRID</panetype>
+    <datatable>okenggpcontract_staging</datatable>
+    <viewpanetitle>ContractStaging</viewpanetitle>
+    <viewpanefont>Arial</viewpanefont>
+    <viewpanefontsize>8</viewpanefontsize>
+    <viewpanefontbold>false</viewpanefontbold>
+    <visible>true</visible>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T22:14:43.5</creationdate>
+    <autoheight>false</autoheight>
+    <autosizecolumn>false</autosizecolumn>
+    <securitycriteria>false</securitycriteria>
+    <RowNumber>4</RowNumber>
+  </viewpane>
+  <viewpane>
+    <viewname>OKE QuorumInterface</viewname>
+    <viewpane>okeNggpContractStagingArchive</viewpane>
+    <priority>1</priority>
+    <sortseq>1</sortseq>
+    <panetype>GRID</panetype>
+    <datatable>okenggpcontract_staging_arc</datatable>
+    <viewpanetitle>ContractStagingArchive</viewpanetitle>
+    <viewpanefont>Arial</viewpanefont>
+    <viewpanefontsize>8</viewpanefontsize>
+    <viewpanefontbold>false</viewpanefontbold>
+    <visible>true</visible>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T22:15:32.207</creationdate>
+    <autoheight>false</autoheight>
+    <autosizecolumn>false</autosizecolumn>
+    <securitycriteria>false</securitycriteria>
+    <RowNumber>8</RowNumber>
+  </viewpane>
+  <viewpane>
+    <viewname>OKE QuorumInterface</viewname>
+    <viewpane>okeNggpContractMeterStaging</viewpane>
+    <priority>1</priority>
+    <sortseq>1</sortseq>
+    <panetype>GRID</panetype>
+    <datatable>okenggpcontractmeter_staging</datatable>
+    <viewpanetitle>ContractMeterStaging</viewpanetitle>
+    <viewpanefont>Arial</viewpanefont>
+    <viewpanefontsize>8</viewpanefontsize>
+    <viewpanefontbold>false</viewpanefontbold>
+    <visible>true</visible>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T22:20:29.03</creationdate>
+    <autoheight>false</autoheight>
+    <autosizecolumn>false</autosizecolumn>
+    <securitycriteria>false</securitycriteria>
+    <RowNumber>10</RowNumber>
+  </viewpane>
+  <viewpane>
+    <viewname>OKE QuorumInterface</viewname>
+    <viewpane>okeNggpContractMeterStagingArchive</viewpane>
+    <priority>1</priority>
+    <sortseq>1</sortseq>
+    <panetype>GRID</panetype>
+    <datatable>okenggpcontractmeter_staging_arc</datatable>
+    <viewpanetitle>ContractMeterStagingArchive</viewpanetitle>
+    <viewpanefont>Arial</viewpanefont>
+    <viewpanefontsize>8</viewpanefontsize>
+    <viewpanefontbold>false</viewpanefontbold>
+    <visible>true</visible>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T22:25:57.857</creationdate>
+    <revisionname>Craig Albright</revisionname>
+    <revisiondate>2014-08-13T22:28:38.977</revisiondate>
+    <autoheight>false</autoheight>
+    <autosizecolumn>false</autosizecolumn>
+    <securitycriteria>false</securitycriteria>
+    <RowNumber>12</RowNumber>
+  </viewpane>
+  <viewpane>
+    <viewname>OKE QuorumInterface</viewname>
+    <viewpane>okeNggpContractMeter</viewpane>
+    <priority>1</priority>
+    <sortseq>1</sortseq>
+    <panetype>GRID</panetype>
+    <datatable>okenggpcontractmeter</datatable>
+    <viewpanetitle>ContractMeter</viewpanetitle>
+    <viewpanefont>Arial</viewpanefont>
+    <viewpanefontsize>8</viewpanefontsize>
+    <viewpanefontbold>false</viewpanefontbold>
+    <visible>true</visible>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T22:26:38.833</creationdate>
+    <revisionname>Craig Albright</revisionname>
+    <revisiondate>2014-08-13T22:28:38.977</revisiondate>
+    <autoheight>false</autoheight>
+    <autosizecolumn>false</autosizecolumn>
+    <securitycriteria>false</securitycriteria>
+    <RowNumber>14</RowNumber>
+  </viewpane>
+  <viewpane>
+    <viewname>OKE QuorumInterface</viewname>
+    <viewpane>okeNggpContractMeterXref</viewpane>
+    <priority>1</priority>
+    <sortseq>1</sortseq>
+    <panetype>GRID</panetype>
+    <datatable>okenggpcontractmeter_xref</datatable>
+    <viewpanetitle>ContractMeterXref</viewpanetitle>
+    <viewpanefont>Arial</viewpanefont>
+    <viewpanefontsize>8</viewpanefontsize>
+    <viewpanefontbold>false</viewpanefontbold>
+    <visible>true</visible>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T22:27:23.493</creationdate>
+    <revisionname>Craig Albright</revisionname>
+    <revisiondate>2014-08-13T22:28:38.977</revisiondate>
+    <autoheight>false</autoheight>
+    <autosizecolumn>false</autosizecolumn>
+    <securitycriteria>false</securitycriteria>
+    <RowNumber>16</RowNumber>
+  </viewpane>
+  <viewpane>
+    <viewname>OKE QuorumInterface</viewname>
+    <viewpane>okeNggpContactStaging</viewpane>
+    <priority>1</priority>
+    <sortseq>1</sortseq>
+    <panetype>GRID</panetype>
+    <datatable>okenggpcontact_staging</datatable>
+    <viewpanetitle>ContactStaging</viewpanetitle>
+    <viewpanefont>Arial</viewpanefont>
+    <viewpanefontsize>8</viewpanefontsize>
+    <viewpanefontbold>false</viewpanefontbold>
+    <visible>true</visible>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T22:28:38.977</creationdate>
+    <autoheight>false</autoheight>
+    <autosizecolumn>false</autosizecolumn>
+    <securitycriteria>false</securitycriteria>
+    <RowNumber>6</RowNumber>
+  </viewpane>
+  <viewpane>
+    <viewname>OKE QuorumInterface</viewname>
+    <viewpane>okeNggpContactStagingArchive</viewpane>
+    <priority>1</priority>
+    <sortseq>1</sortseq>
+    <panetype>GRID</panetype>
+    <datatable>okenggpcontact_staging_arc</datatable>
+    <viewpanetitle>ContactStagingArchive</viewpanetitle>
+    <viewpanefont>Arial</viewpanefont>
+    <viewpanefontsize>8</viewpanefontsize>
+    <viewpanefontbold>false</viewpanefontbold>
+    <visible>true</visible>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T22:29:27.423</creationdate>
+    <autoheight>false</autoheight>
+    <autosizecolumn>false</autosizecolumn>
+    <securitycriteria>false</securitycriteria>
+    <RowNumber>7</RowNumber>
+  </viewpane>
+  <viewpane>
+    <viewname>OKE QuorumInterface</viewname>
+    <viewpane>okeNggpNomExport</viewpane>
+    <priority>1</priority>
+    <sortseq>1</sortseq>
+    <panetype>GRID</panetype>
+    <datatable>okenggpnomexport</datatable>
+    <viewpanetitle>NomExport</viewpanetitle>
+    <viewpanefont>Arial</viewpanefont>
+    <viewpanefontsize>8</viewpanefontsize>
+    <viewpanefontbold>false</viewpanefontbold>
+    <visible>true</visible>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-13T22:30:09.087</creationdate>
+    <autoheight>false</autoheight>
+    <autosizecolumn>false</autosizecolumn>
+    <securitycriteria>false</securitycriteria>
+    <RowNumber>20</RowNumber>
+  </viewpane>
+</VisualModelDS>

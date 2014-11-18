@@ -1,0 +1,1891 @@
+<?xml version="1.0" standalone="yes"?>
+<DataModelDS xmlns="http://allegrodevelopment.com/DataModelDS.xsd">
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>address</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>primary address for contact</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>address</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>contactclass</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>16</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>(trader, multiclass, invoice, marketer, confirm, etc</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>contactclass</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>counterparty</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>counterpary name</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>counterparty</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>creationdate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>created on this date</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>creationdate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>creationname</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>created by this user</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>creationname</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>email</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>email address</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>email</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>faxphone</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>fax phone number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>faxphone</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>ftp</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>ftp address</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>ftp</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>homephone</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>home phone number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>homephone</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>message</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>1024</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>validation messages</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>message</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>mobilephone</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>mobile phone number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>mobilephone</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>name</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>contact full name</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>name</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>officephone</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>office phone number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>officephone</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>revisiondate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>revised on this date</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>revisiondate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>revisionname</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>revised by this user</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>revisionname</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>salutation</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>salutation for title</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>salutation</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>status</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>ACTIVE or INACTIVE</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>status</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>telex</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>telex address</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>telex</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>title</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>contact title</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:24:41.103</creationdate>
+    <label>title</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>address</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>primary address for contact</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>address</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>contactclass</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>16</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>(trader, multiclass, invoice, marketer, confirm, etc</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>contactclass</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>counterparty</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>counterpary name</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>counterparty</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>creationdate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>created on this date</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>creationdate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>creationname</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>created by this user</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>creationname</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>email</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>email address</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>email</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>faxphone</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>fax phone number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>faxphone</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>ftp</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>ftp address</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>ftp</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>homephone</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>home phone number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>homephone</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>mobilephone</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>mobile phone number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>mobilephone</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>name</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>contact full name</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>name</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>officephone</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>office phone number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>officephone</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>salutation</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>salutation for title</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>salutation</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>status</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>ACTIVE or INACTIVE</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>status</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>telex</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>telex address</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>telex</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontact_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>title</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>contact title</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:25:54.01</creationdate>
+    <label>title</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>contract</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>16</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>stores contract number from Quorum. Always prepended with a “Q” which is stripped out when data flows back to quorum</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>contract</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>2</dbseq>
+    <dbcolumn>company</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>company code</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>company</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>3</dbseq>
+    <dbcolumn>company_name</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>text value of the company name</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>company_name</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>4</dbseq>
+    <dbcolumn>ba</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>the counterparty number from quorum</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>ba</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>5</dbseq>
+    <dbcolumn>ba_name</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>The counterparty name</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>ba_name</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>6</dbseq>
+    <dbcolumn>pipeline</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>The pipeline number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>pipeline</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>7</dbseq>
+    <dbcolumn>pipeline_name</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>The name of the pipeline</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>pipeline_name</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>8</dbseq>
+    <dbcolumn>addressseq</dbcolumn>
+    <dbtype>number</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>The address sequence for the counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>addressseq</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>9</dbseq>
+    <dbcolumn>addr1</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>1024</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>address 1 for counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>addr1</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>10</dbseq>
+    <dbcolumn>addr2</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>1024</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>address 2 for counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>addr2</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>11</dbseq>
+    <dbcolumn>addr3</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>1024</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>address 3 for counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>addr3</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>12</dbseq>
+    <dbcolumn>city</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>city of counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>city</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>13</dbseq>
+    <dbcolumn>state</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>state of counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>state</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>14</dbseq>
+    <dbcolumn>zip</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>16</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>postal code of counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>zip</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>15</dbseq>
+    <dbcolumn>contractdate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>date of contract</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>contractdate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>16</dbseq>
+    <dbcolumn>effectivedate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>effective date of contract</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>effectivedate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>17</dbseq>
+    <dbcolumn>terminationdate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>The termdate of the contract</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>terminationdate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>18</dbseq>
+    <dbcolumn>message</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>1024</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>Validation messages</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>message</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>19</dbseq>
+    <dbcolumn>creationname</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>user that created the record</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>creationname</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>20</dbseq>
+    <dbcolumn>creationdate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>creation date for the staging record</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>creationdate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>21</dbseq>
+    <dbcolumn>revisionname</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>user that revised the record</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>revisionname</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging</dbtable>
+    <dbseq>22</dbseq>
+    <dbcolumn>revisiondate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>revisiondate</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:43:28.27</creationdate>
+    <label>revisiondate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>contract</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>16</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>stores contract number from Quorum. Always prepended with a “Q” which is stripped out when data flows back to quorum</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>contract</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>2</dbseq>
+    <dbcolumn>company</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>company code</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>company</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>3</dbseq>
+    <dbcolumn>company_name</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>text value of the company name</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>company_name</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>4</dbseq>
+    <dbcolumn>ba</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>the counterparty number from quorum</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>ba</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>5</dbseq>
+    <dbcolumn>ba_name</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>The counterparty name</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>ba_name</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>6</dbseq>
+    <dbcolumn>pipeline</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>The pipeline number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>pipeline</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>7</dbseq>
+    <dbcolumn>pipeline_name</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>The name of the pipeline</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>pipeline_name</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>8</dbseq>
+    <dbcolumn>addressseq</dbcolumn>
+    <dbtype>number</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>The address sequence for the counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>addressseq</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>9</dbseq>
+    <dbcolumn>addr1</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>1024</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>address 1 for counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>addr1</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>10</dbseq>
+    <dbcolumn>addr2</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>1024</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>address 2 for counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>addr2</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>11</dbseq>
+    <dbcolumn>addr3</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>1024</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>address 3 for counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>addr3</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>12</dbseq>
+    <dbcolumn>city</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>city of counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>city</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>13</dbseq>
+    <dbcolumn>state</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>state of counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>state</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>14</dbseq>
+    <dbcolumn>zip</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>16</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>postal code of counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>zip</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>15</dbseq>
+    <dbcolumn>contractdate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>date of contract</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>contractdate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>16</dbseq>
+    <dbcolumn>effectivedate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>effective date of contract</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>effectivedate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>17</dbseq>
+    <dbcolumn>terminationdate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>The termdate of the contract</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>terminationdate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>19</dbseq>
+    <dbcolumn>creationname</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>user that created the record</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>creationname</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontract_staging_arc</dbtable>
+    <dbseq>20</dbseq>
+    <dbcolumn>creationdate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>creation date for the staging record</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:44:37.2</creationdate>
+    <label>creationdate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>contract</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>16</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>contract number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>contract</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>2</dbseq>
+    <dbcolumn>pipeline</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>pipeline number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>pipeline</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>3</dbseq>
+    <dbcolumn>pipeline_name</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>name of pipeline</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>pipeline_name</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>4</dbseq>
+    <dbcolumn>meter</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>48</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>meter number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>meter</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>5</dbseq>
+    <dbcolumn>meter_name</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>meter name</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>meter_name</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>6</dbseq>
+    <dbcolumn>operator</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>company that operates meter</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>operator</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>7</dbseq>
+    <dbcolumn>stateprovince</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>state/province of the point</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>stateprovince</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>8</dbseq>
+    <dbcolumn>county</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>24</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>county of the point</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>county</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>9</dbseq>
+    <dbcolumn>countycode</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>24</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>the code of the county for point</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>countycode</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>10</dbseq>
+    <dbcolumn>township</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>township of the point</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>township</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>11</dbseq>
+    <dbcolumn>section</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>16</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>section of the point</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>section</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>12</dbseq>
+    <dbcolumn>range</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>16</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>range for the point</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>range</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>13</dbseq>
+    <dbcolumn>message</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>1024</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>validation message for the import</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>message</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>14</dbseq>
+    <dbcolumn>creationname</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>the user who created the record</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>creationname</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>15</dbseq>
+    <dbcolumn>creationdate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>the date the record was created</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>creationdate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>16</dbseq>
+    <dbcolumn>revisionname</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>revision user</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>revisionname</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging</dbtable>
+    <dbseq>17</dbseq>
+    <dbcolumn>revisiondate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>revision date</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:02:48.46</creationdate>
+    <label>revisiondate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>contract</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>16</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>contract number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>contract</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>2</dbseq>
+    <dbcolumn>pipeline</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>pipeline number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>pipeline</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>3</dbseq>
+    <dbcolumn>pipeline_name</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>name of pipeline</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>pipeline_name</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>4</dbseq>
+    <dbcolumn>meter</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>48</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>meter number</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>meter</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>5</dbseq>
+    <dbcolumn>meter_name</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>meter name</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>meter_name</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>6</dbseq>
+    <dbcolumn>operator</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>company that operates meter</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>operator</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>7</dbseq>
+    <dbcolumn>stateprovince</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>state/province of the point</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>stateprovince</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>8</dbseq>
+    <dbcolumn>county</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>24</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>county of the point</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>county</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>9</dbseq>
+    <dbcolumn>countycode</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>24</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>the code of the county for point</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>countycode</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>10</dbseq>
+    <dbcolumn>township</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>32</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>township of the point</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>township</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>11</dbseq>
+    <dbcolumn>section</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>16</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>section of the point</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>section</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>12</dbseq>
+    <dbcolumn>range</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>16</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>range for the point</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>range</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>14</dbseq>
+    <dbcolumn>creationname</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>the user who created the record</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>creationname</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_staging_arc</dbtable>
+    <dbseq>15</dbseq>
+    <dbcolumn>creationdate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>the date the record was created</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:03:29.413</creationdate>
+    <label>creationdate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_xref</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>contract</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>16</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>Contract number</dbdefinition>
+    <dbprimarykey>1</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:08:58.153</creationdate>
+    <label>contract</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_xref</dbtable>
+    <dbseq>2</dbseq>
+    <dbcolumn>allegropipeline</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>Allegro's pipeline number</dbdefinition>
+    <dbprimarykey>1</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:08:58.153</creationdate>
+    <label>allegropipeline</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_xref</dbtable>
+    <dbseq>3</dbseq>
+    <dbcolumn>pipeline</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>Quorum's pipeline number</dbdefinition>
+    <dbprimarykey>1</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:08:58.153</creationdate>
+    <label>pipeline</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_xref</dbtable>
+    <dbseq>4</dbseq>
+    <dbcolumn>meter</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>48</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>Meter number</dbdefinition>
+    <dbprimarykey>1</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:08:58.153</creationdate>
+    <label>meter</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_xref</dbtable>
+    <dbseq>5</dbseq>
+    <dbcolumn>creationname</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>Creation name</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:08:58.153</creationdate>
+    <label>creationname</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_xref</dbtable>
+    <dbseq>6</dbseq>
+    <dbcolumn>creationdate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>Creation date</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:08:58.153</creationdate>
+    <label>creationdate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_xref</dbtable>
+    <dbseq>7</dbseq>
+    <dbcolumn>revisionname</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>64</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>Revision name</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:08:58.153</creationdate>
+    <label>revisionname</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcontractmeter_xref</dbtable>
+    <dbseq>8</dbseq>
+    <dbcolumn>revisiondate</dbcolumn>
+    <dbtype>datetime</dbtype>
+    <dblen>8</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>Revision date</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>0</dbindex>
+    <dbnull>1</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T01:08:58.153</creationdate>
+    <label>revisiondate</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcounterparties</dbtable>
+    <dbseq>1</dbseq>
+    <dbcolumn>legacy</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>legacy(quorum) value</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>1</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:52:59.88</creationdate>
+    <label>legacy</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcounterparties</dbtable>
+    <dbseq>2</dbseq>
+    <dbcolumn>allegro</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>allegros mapped value</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>1</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:52:59.88</creationdate>
+    <label>allegro</label>
+  </dbobject>
+  <dbobject>
+    <dbtable>okenggpcounterparties</dbtable>
+    <dbseq>3</dbseq>
+    <dbcolumn>request</dbcolumn>
+    <dbtype>varchar</dbtype>
+    <dblen>128</dblen>
+    <dbprecision>0</dbprecision>
+    <dbdefinition>requested value for counterparty</dbdefinition>
+    <dbprimarykey>0</dbprimarykey>
+    <dbindex>1</dbindex>
+    <dbnull>0</dbnull>
+    <dbsysgen>0</dbsysgen>
+    <creationname>Craig Albright</creationname>
+    <creationdate>2014-08-12T00:52:59.88</creationdate>
+    <label>request</label>
+  </dbobject>
+</DataModelDS>
